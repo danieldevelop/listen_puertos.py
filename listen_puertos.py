@@ -12,9 +12,10 @@ def escanear(ip, puerto):
 
     try:
         Socket.settimeout(1);
-        resultado = Socket.connect((ip, puerto));
+        Socket.connect((ip, puerto));
+        Socket.send(b'hola mundo');      
         print("El puerto {} está abierto".format(puerto));
-        
+
     except Exception as e:
         print(f"E: {e}");
     finally:
